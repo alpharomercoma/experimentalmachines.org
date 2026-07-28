@@ -1,12 +1,11 @@
 export const site = {
-  name: "Alpha Experimental",
-  fullName: "Alpha Experimental Machines",
-  url: "https://alphaexperimental.org",
+  name: "Experimental Machines",
+  fullName: "Experimental Machines",
+  url: "https://experimentalmachines.org",
   tagline: "Test what others assume.",
-  description:
-    "Alpha Experimental is an independent research lab for multimodal intelligence, accelerated computing, and open data systems.",
+  description: "Independent research across intelligence, compute, and data.",
   edge: "We run the tests ourselves and publish the code, methods, and raw numbers.",
-  email: "alpha@alphaexperimental.org",
+  email: "alpha@experimentalmachines.org",
   github: "https://github.com/alpharomercoma",
 };
 

@@ -1,6 +1,6 @@
-# alphaexperimental.org
+# experimentalmachines.org
 
-Site for Alpha Experimental Machines, an independent research lab for multimodal intelligence, accelerated computing, and open data systems.
+Site for Experimental Machines. Independent research across intelligence, compute, and data.
 
 Next.js (App Router, TypeScript) + Tailwind CSS v4. Static content, no API routes.
 
@@ -16,8 +16,4 @@ All copy, stats, and project links live in `lib/content.ts`. Benchmark chart dat
 
 ## Deploy
 
-```bash
-vercel deploy
-```
-
-Attach the `alphaexperimental.org` domain in the Vercel project settings.
+Pushes to `main` deploy to production via the Vercel Git integration. The `experimentalmachines.org` domain is attached in the Vercel project settings.
