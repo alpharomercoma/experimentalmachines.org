@@ -1,4 +1,5 @@
 // Values are measured results published in the lab's benchmark repositories.
+// MI300X-vs-H200: REPORT.md section 5, Llama 3.3 70B FP8, 1k in / 1k out.
 // snapdragon-vs-m5: shared/comparison.txt. snapdragon-vs-mediatek: README.
 
 export type BenchmarkEntry = {
@@ -8,6 +9,7 @@ export type BenchmarkEntry = {
 };
 
 export type BenchmarkGroup = {
+  scale: string;
   workload: string;
   unit: string;
   entries: BenchmarkEntry[];
@@ -15,14 +17,16 @@ export type BenchmarkGroup = {
 
 export const benchmarkGroups: BenchmarkGroup[] = [
   {
-    workload: "Gemma 3 1B Q4_0, prompt processing, llama.cpp GPU",
+    scale: "Datacenter",
+    workload: "Llama 3.3 70B FP8 serving, vLLM, concurrency 128",
     unit: "tok/s",
     entries: [
-      { name: "Apple M5", value: 5603.7, display: "5,604" },
-      { name: "Snapdragon X2 Elite", value: 1920.5, display: "1,921" },
+      { name: "AMD MI300X", value: 1873, display: "1,873" },
+      { name: "NVIDIA H200", value: 1637, display: "1,637" },
     ],
   },
   {
+    scale: "Laptop",
     workload: "Gemma 3 1B Q4_0, token generation, llama.cpp GPU",
     unit: "tok/s",
     entries: [
@@ -31,15 +35,8 @@ export const benchmarkGroups: BenchmarkGroup[] = [
     ],
   },
   {
-    workload: "Laptop NPU dense compute",
-    unit: "GFLOP/s",
-    entries: [
-      { name: "M5 ANE, int8", value: 15593.1, display: "15,593" },
-      { name: "X2 HTP, fp16", value: 15205.4, display: "15,205" },
-    ],
-  },
-  {
-    workload: "Phone NPU int8, 8-layer FC",
+    scale: "Phone",
+    workload: "NPU int8 dense compute, 8-layer FC",
     unit: "GOPS",
     entries: [
       { name: "Snapdragon 8 Elite", value: 4307, display: "4,307" },
@@ -49,6 +46,10 @@ export const benchmarkGroups: BenchmarkGroup[] = [
 ];
 
 export const benchmarkSources = [
+  {
+    name: "MI300X-vs-H200",
+    href: "https://github.com/alpharomercoma/MI300X-vs-H200",
+  },
   {
     name: "snapdragon-vs-m5",
     href: "https://github.com/alpharomercoma/snapdragon-vs-m5",

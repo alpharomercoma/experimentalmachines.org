@@ -6,7 +6,7 @@ export default function BenchmarkFigure() {
       <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
         <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
           <h2 className="text-xl font-semibold tracking-tight">
-            On-device inference, measured
+            Inference, measured
           </h2>
           <p className="text-sm text-ink-soft">
             Methodology and raw logs:{" "}
@@ -25,12 +25,13 @@ export default function BenchmarkFigure() {
             ))}
           </p>
         </div>
-        <div className="mt-10 grid gap-x-16 gap-y-12 md:grid-cols-2">
+        <div className="mt-10 grid gap-x-12 gap-y-12 md:grid-cols-3">
           {benchmarkGroups.map((group) => {
             const max = Math.max(...group.entries.map((e) => e.value));
             return (
               <figure key={group.workload}>
                 <figcaption className="text-sm text-ink-soft">
+                  <span className="font-semibold text-ink">{group.scale}.</span>{" "}
                   {group.workload}{" "}
                   <span className="text-ink-soft/70">({group.unit})</span>
                 </figcaption>
