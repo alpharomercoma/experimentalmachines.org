@@ -14,7 +14,7 @@ export default function Work() {
             rel="noreferrer"
             className="text-sm text-ink-soft hover:text-ink"
           >
-            All 66 repositories &#8599;
+            All repositories &#8599;
           </a>
         </div>
         <ul className="mt-8 divide-y divide-line border-y border-line">

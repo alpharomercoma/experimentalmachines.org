@@ -1,0 +1,222 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - navigation "Main" [ref=f1e3]:
+      - link "Experimental Machines" [ref=f1e4] [cursor=pointer]:
+        - /url: "#top"
+      - generic [ref=f1e6]:
+        - link "Research" [ref=f1e7] [cursor=pointer]:
+          - /url: "#research"
+        - link "Work" [ref=f1e8] [cursor=pointer]:
+          - /url: "#work"
+        - link "People" [ref=f1e9] [cursor=pointer]:
+          - /url: "#people"
+        - link "Contact" [ref=f1e10] [cursor=pointer]:
+          - /url: "#contact"
+        - link "GitHub" [ref=f1e11] [cursor=pointer]:
+          - /url: https://github.com/alpharomercoma
+  - main [ref=f1e12]:
+    - generic [ref=f1e14]:
+      - heading "Test what others assume." [level=1] [ref=f1e15]
+      - paragraph [ref=f1e16]: Independent research across intelligence, compute, and data. We run the tests ourselves and publish the code, methods, and raw numbers.
+      - generic [ref=f1e17]:
+        - link "alpha@experimentalmachines.org" [ref=f1e18] [cursor=pointer]:
+          - /url: mailto:alpha@experimentalmachines.org
+        - link "GitHub ↗" [ref=f1e19] [cursor=pointer]:
+          - /url: https://github.com/alpharomercoma
+    - region "Lab metrics" [ref=f1e20]:
+      - generic [ref=f1e21]:
+        - generic [ref=f1e22]:
+          - generic [ref=f1e23]: $376K
+          - generic [ref=f1e24]: Google TPU Research Cloud compute grant
+        - generic [ref=f1e25]:
+          - generic [ref=f1e26]: "11"
+          - generic [ref=f1e27]: accelerator platforms benchmarked
+        - generic [ref=f1e28]:
+          - generic [ref=f1e29]: 2,000+
+          - generic [ref=f1e30]: labeled video clips published
+        - generic [ref=f1e31]:
+          - generic [ref=f1e32]: "69"
+          - generic [ref=f1e33]: public repositories
+    - region "Measured benchmarks" [ref=f1e34]:
+      - generic [ref=f1e35]:
+        - generic [ref=f1e36]:
+          - heading "Inference, measured" [level=2] [ref=f1e37]
+          - paragraph [ref=f1e38]:
+            - text: "Methodology and raw logs:"
+            - link "MI300X-vs-H200" [ref=f1e40] [cursor=pointer]:
+              - /url: https://github.com/alpharomercoma/MI300X-vs-H200
+            - generic [ref=f1e41]:
+              - text: ","
+              - link "snapdragon-vs-m5" [ref=f1e42] [cursor=pointer]:
+                - /url: https://github.com/alpharomercoma/snapdragon-vs-m5
+            - generic [ref=f1e43]:
+              - text: ","
+              - link "snapdragon-vs-mediatek" [ref=f1e44] [cursor=pointer]:
+                - /url: https://github.com/alpharomercoma/snapdragon-vs-mediatek
+        - generic [ref=f1e45]:
+          - figure "Datacenter. Llama 3.3 70B FP8 serving, vLLM, concurrency 128 (tok/s)" [ref=f1e46]:
+            - generic [ref=f1e47]:
+              - generic [ref=f1e48]: Datacenter.
+              - text: Llama 3.3 70B FP8 serving, vLLM, concurrency 128
+              - generic [ref=f1e49]: (tok/s)
+            - generic [ref=f1e50]:
+              - generic [ref=f1e52]:
+                - generic [ref=f1e53]: AMD MI300X
+                - generic [ref=f1e54]: 1,873
+              - generic [ref=f1e58]:
+                - generic [ref=f1e59]: NVIDIA H200
+                - generic [ref=f1e60]: 1,637
+          - figure "Laptop. Gemma 3 1B Q4_0, token generation, llama.cpp GPU (tok/s)" [ref=f1e63]:
+            - generic [ref=f1e64]:
+              - generic [ref=f1e65]: Laptop.
+              - text: Gemma 3 1B Q4_0, token generation, llama.cpp GPU
+              - generic [ref=f1e66]: (tok/s)
+            - generic [ref=f1e67]:
+              - generic [ref=f1e69]:
+                - generic [ref=f1e70]: Apple M5
+                - generic [ref=f1e71]: "144"
+              - generic [ref=f1e75]:
+                - generic [ref=f1e76]: Snapdragon X2 Elite
+                - generic [ref=f1e77]: "75"
+          - figure "Phone. NPU int8 dense compute, 8-layer FC (GOPS)" [ref=f1e80]:
+            - generic [ref=f1e81]:
+              - generic [ref=f1e82]: Phone.
+              - text: NPU int8 dense compute, 8-layer FC
+              - generic [ref=f1e83]: (GOPS)
+            - generic [ref=f1e84]:
+              - generic [ref=f1e86]:
+                - generic [ref=f1e87]: Snapdragon 8 Elite
+                - generic [ref=f1e88]: 4,307
+              - generic [ref=f1e92]:
+                - generic [ref=f1e93]: Dimensity 9500s
+                - generic [ref=f1e94]: 1,470
+    - generic [ref=f1e98]:
+      - heading "Research" [level=2] [ref=f1e99]
+      - generic [ref=f1e100]:
+        - article [ref=f1e101]:
+          - generic [ref=f1e102]: "01"
+          - generic [ref=f1e103]:
+            - heading "Multimodality" [level=3] [ref=f1e104]
+            - paragraph [ref=f1e105]: Vision-language systems that judge content, not just caption it.
+            - list [ref=f1e106]:
+              - listitem [ref=f1e107]:
+                - link "Visual-Qwen↗" [ref=f1e108] [cursor=pointer]:
+                  - /url: https://github.com/alpharomercoma/vqwen-qformer
+                - generic [ref=f1e109]: · CLIP + Q-Former + Qwen3 4B, 92% eval accuracy, trained on an H200
+              - listitem [ref=f1e110]:
+                - text: MicroMARC
+                - generic [ref=f1e111]: · vision-language model that flags cognitively degrading short-form video
+        - article [ref=f1e112]:
+          - generic [ref=f1e113]: "02"
+          - generic [ref=f1e114]:
+            - heading "Accelerated computing" [level=3] [ref=f1e115]
+            - paragraph [ref=f1e116]: One PyTorch workload, profiled across GPUs, TPUs, NPUs, and phones.
+            - list [ref=f1e117]:
+              - listitem [ref=f1e118]:
+                - text: De-mystifying PyTorch for ASICs
+                - generic [ref=f1e119]: · accepted talk, PyTorch Conference Europe 2026
+              - listitem [ref=f1e120]:
+                - link "MI300X vs H200↗" [ref=f1e121] [cursor=pointer]:
+                  - /url: https://github.com/alpharomercoma/MI300X-vs-H200
+                - generic [ref=f1e122]: · single-GPU datacenter benchmark; a 1.36x memory edge becomes a 1.84x KV cache advantage
+              - listitem [ref=f1e123]:
+                - link "Edge silicon benchmarks↗" [ref=f1e124] [cursor=pointer]:
+                  - /url: https://github.com/alpharomercoma/snapdragon-vs-m5
+                - generic [ref=f1e125]: · Apple M5, Snapdragon X2 Elite, Dimensity 9500s, head to head
+        - article [ref=f1e126]:
+          - generic [ref=f1e127]: "03"
+          - generic [ref=f1e128]:
+            - heading "Data engineering" [level=3] [ref=f1e129]
+            - paragraph [ref=f1e130]: Datasets and pipelines built to be rerun, not just cited.
+            - list [ref=f1e131]:
+              - listitem [ref=f1e132]:
+                - text: Multimodal Sludge Dataset
+                - generic [ref=f1e133]: · 2,000+ labeled video clips, published on Kaggle
+              - listitem [ref=f1e134]:
+                - link "Philippine Mall Explorer↗" [ref=f1e135] [cursor=pointer]:
+                  - /url: https://github.com/alpharomercoma/philippine-mall-explorer
+                - generic [ref=f1e136]: · 40,462 store listings from 303 malls, scraped into a reproducible dataset on a map
+              - listitem [ref=f1e137]:
+                - link "chorus-searxng↗" [ref=f1e138] [cursor=pointer]:
+                  - /url: https://github.com/alpharomercoma/chorus-searxng
+                - generic [ref=f1e139]: · self-hosted private search with AI answer synthesis
+    - generic [ref=f1e141]:
+      - generic [ref=f1e142]:
+        - heading "Selected work" [level=2] [ref=f1e143]
+        - link "All 66 repositories ↗" [ref=f1e144] [cursor=pointer]:
+          - /url: https://github.com/alpharomercoma
+      - list [ref=f1e145]:
+        - listitem [ref=f1e146]:
+          - 'link "MI300X-vs-H200 One AMD MI300X against one NVIDIA H200: inference and training, every result anchored to a roofline." [ref=f1e147] [cursor=pointer]':
+            - /url: https://github.com/alpharomercoma/MI300X-vs-H200
+            - generic [ref=f1e148]: MI300X-vs-H200
+            - generic [ref=f1e149]: "One AMD MI300X against one NVIDIA H200: inference and training, every result anchored to a roofline."
+            - generic [ref=f1e150]: ↗
+        - listitem [ref=f1e151]:
+          - link "neuron-pipelines Llama 3.1 8B LoRA fine-tuned on Trainium1, served by vLLM on Inferentia2, measured end to end." [ref=f1e152] [cursor=pointer]:
+            - /url: https://github.com/alpharomercoma/torchneuronx
+            - generic [ref=f1e153]: neuron-pipelines
+            - generic [ref=f1e154]: Llama 3.1 8B LoRA fine-tuned on Trainium1, served by vLLM on Inferentia2, measured end to end.
+            - generic [ref=f1e155]: ↗
+        - listitem [ref=f1e156]:
+          - link "serverless-inference Scale-to-zero LLM inference on RunPod; model and GPU picked from a measured shootout." [ref=f1e157] [cursor=pointer]:
+            - /url: https://github.com/alpharomercoma/serverless-inference
+            - generic [ref=f1e158]: serverless-inference
+            - generic [ref=f1e159]: Scale-to-zero LLM inference on RunPod; model and GPU picked from a measured shootout.
+            - generic [ref=f1e160]: ↗
+        - listitem [ref=f1e161]:
+          - link "philippine-mall-explorer 40,462 store listings from 303 Philippine malls, cleaned into a reproducible dataset." [ref=f1e162] [cursor=pointer]:
+            - /url: https://github.com/alpharomercoma/philippine-mall-explorer
+            - generic [ref=f1e163]: philippine-mall-explorer
+            - generic [ref=f1e164]: 40,462 store listings from 303 Philippine malls, cleaned into a reproducible dataset.
+            - generic [ref=f1e165]: ↗
+        - listitem [ref=f1e166]:
+          - 'link "vqwen-qformer Vision-language model: CLIP + Q-Former + Qwen3 4B, trained on an H200." [ref=f1e167] [cursor=pointer]':
+            - /url: https://github.com/alpharomercoma/vqwen-qformer
+            - generic [ref=f1e168]: vqwen-qformer
+            - generic [ref=f1e169]: "Vision-language model: CLIP + Q-Former + Qwen3 4B, trained on an H200."
+            - generic [ref=f1e170]: ↗
+        - listitem [ref=f1e171]:
+          - 'link "snapdragon-vs-m5 Reproducible head-to-head: Apple M5 against Snapdragon X2 Elite." [ref=f1e172] [cursor=pointer]':
+            - /url: https://github.com/alpharomercoma/snapdragon-vs-m5
+            - generic [ref=f1e173]: snapdragon-vs-m5
+            - generic [ref=f1e174]: "Reproducible head-to-head: Apple M5 against Snapdragon X2 Elite."
+            - generic [ref=f1e175]: ↗
+    - region "Principles" [ref=f1e176]:
+      - generic [ref=f1e178]:
+        - generic [ref=f1e179]:
+          - heading "Independent." [level=3] [ref=f1e180]
+          - paragraph [ref=f1e181]: No vendor allegiance. We buy or rent the hardware we test.
+        - generic [ref=f1e182]:
+          - heading "Open." [level=3] [ref=f1e183]
+          - paragraph [ref=f1e184]: Methods, code, and raw logs ship with every result.
+        - generic [ref=f1e185]:
+          - heading "Measured." [level=3] [ref=f1e186]
+          - paragraph [ref=f1e187]: Claims come from benchmarks we ran, not spec sheets.
+    - generic [ref=f1e189]:
+      - heading "People" [level=2] [ref=f1e190]
+      - generic [ref=f1e191]:
+        - generic [ref=f1e192]:
+          - generic [ref=f1e193]: Alpha Romer Coma
+          - generic [ref=f1e194]: Founder
+          - link "LinkedIn ↗" [ref=f1e195] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/alpharomercoma/
+        - generic [ref=f1e196]:
+          - generic [ref=f1e197]: Marc Olata
+          - generic [ref=f1e198]: Founding Member
+          - link "LinkedIn ↗" [ref=f1e199] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/marc-olata
+    - generic [ref=f1e201]:
+      - heading "Contact" [level=2] [ref=f1e202]
+      - paragraph [ref=f1e203]: Have a claim worth testing?
+      - link "alpha@experimentalmachines.org" [ref=f1e204] [cursor=pointer]:
+        - /url: mailto:alpha@experimentalmachines.org
+  - contentinfo [ref=f1e205]:
+    - generic [ref=f1e206]:
+      - generic [ref=f1e207]: Experimental Machines © 2026
+      - generic [ref=f1e208]:
+        - link "GitHub" [ref=f1e209] [cursor=pointer]:
+          - /url: https://github.com/alpharomercoma
+        - link "alpha@experimentalmachines.org" [ref=f1e210] [cursor=pointer]:
+          - /url: mailto:alpha@experimentalmachines.org
+  - alert [ref=f1e211]
