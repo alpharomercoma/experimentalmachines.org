@@ -11,9 +11,9 @@ export const site = {
 
 export const stats = [
   { value: "$376K", label: "Google TPU Research Cloud compute grant" },
-  { value: "4", label: "accelerator platforms benchmarked" },
+  { value: "11", label: "accelerator platforms benchmarked" },
   { value: "2,000+", label: "labeled video clips published" },
-  { value: "66", label: "public repositories" },
+  { value: "69", label: "public repositories" },
 ];
 
 export type Project = {
@@ -56,14 +56,14 @@ export const pillars: {
         href: null,
       },
       {
+        name: "MI300X vs H200",
+        detail: "single-GPU datacenter benchmark; a 1.36x memory edge becomes a 1.84x KV cache advantage",
+        href: "https://github.com/alpharomercoma/MI300X-vs-H200",
+      },
+      {
         name: "Edge silicon benchmarks",
         detail: "Apple M5, Snapdragon X2 Elite, Dimensity 9500s, head to head",
         href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
-      },
-      {
-        name: "will-it-asic",
-        detail: "model compatibility across TPU, Trainium, Inferentia, and Gaudi",
-        href: "https://github.com/alpharomercoma/will-it-asic",
       },
     ],
   },
@@ -78,9 +78,9 @@ export const pillars: {
         href: null,
       },
       {
-        name: "ts-jobspy",
-        detail: "job market scraper for LinkedIn, Indeed, Glassdoor, and ZipRecruiter",
-        href: "https://github.com/alpharomercoma/ts-jobspy",
+        name: "Philippine Mall Explorer",
+        detail: "40,462 store listings from 303 malls, scraped into a reproducible dataset on a map",
+        href: "https://github.com/alpharomercoma/philippine-mall-explorer",
       },
       {
         name: "chorus-searxng",
@@ -93,6 +93,26 @@ export const pillars: {
 
 export const work = [
   {
+    name: "MI300X-vs-H200",
+    desc: "One AMD MI300X against one NVIDIA H200: inference and training, every result anchored to a roofline.",
+    href: "https://github.com/alpharomercoma/MI300X-vs-H200",
+  },
+  {
+    name: "neuron-pipelines",
+    desc: "Llama 3.1 8B LoRA fine-tuned on Trainium1, served by vLLM on Inferentia2, measured end to end.",
+    href: "https://github.com/alpharomercoma/torchneuronx",
+  },
+  {
+    name: "serverless-inference",
+    desc: "Scale-to-zero LLM inference on RunPod; model and GPU picked from a measured shootout.",
+    href: "https://github.com/alpharomercoma/serverless-inference",
+  },
+  {
+    name: "philippine-mall-explorer",
+    desc: "40,462 store listings from 303 Philippine malls, cleaned into a reproducible dataset.",
+    href: "https://github.com/alpharomercoma/philippine-mall-explorer",
+  },
+  {
     name: "vqwen-qformer",
     desc: "Vision-language model: CLIP + Q-Former + Qwen3 4B, trained on an H200.",
     href: "https://github.com/alpharomercoma/vqwen-qformer",
@@ -101,26 +121,6 @@ export const work = [
     name: "snapdragon-vs-m5",
     desc: "Reproducible head-to-head: Apple M5 against Snapdragon X2 Elite.",
     href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
-  },
-  {
-    name: "snapdragon-vs-mediatek",
-    desc: "On-device benchmark: Snapdragon 8 Elite against Dimensity 9500s.",
-    href: "https://github.com/alpharomercoma/snapdragon-vs-mediatek",
-  },
-  {
-    name: "will-it-asic",
-    desc: "Checks model compatibility across TPU, Trainium, Inferentia, and Gaudi.",
-    href: "https://github.com/alpharomercoma/will-it-asic",
-  },
-  {
-    name: "poco-phone-ai-training",
-    desc: "Training and inference on a retail phone NPU over SSH.",
-    href: "https://github.com/alpharomercoma/poco-phone-ai-training",
-  },
-  {
-    name: "local-agentic-rag-with-qwen3",
-    desc: "Local agentic RAG on Qwen3 embeddings, reranker, and LLM.",
-    href: "https://github.com/alpharomercoma/local-agentic-rag-with-qwen3",
   },
 ];
 
