@@ -13,7 +13,7 @@ export const stats = [
   { value: "$376K", label: "Google TPU Research Cloud compute grant" },
   { value: "11", label: "accelerator platforms benchmarked" },
   { value: "2,000+", label: "labeled video clips published" },
-  { value: "69", label: "public repositories" },
+  { value: "78", label: "public repositories" },
 ];
 
 export type Project = {
@@ -65,6 +65,16 @@ export const pillars: {
         detail: "Apple M5, Snapdragon X2 Elite, Dimensity 9500s, head to head",
         href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
       },
+      {
+        name: "compute-visualizer",
+        detail: "roofline and five-way bottleneck analysis for H100 training and inference",
+        href: "https://github.com/alpharomercoma/compute-visualizer",
+      },
+      {
+        name: "openweights",
+        detail: "open-weight models running locally on an Android phone, Kotlin and llama.cpp",
+        href: "https://github.com/alpharomercoma/openweights",
+      },
     ],
   },
   {
@@ -83,6 +93,11 @@ export const pillars: {
         href: "https://github.com/alpharomercoma/philippine-mall-explorer",
       },
       {
+        name: "ts-jobspy",
+        detail: "TypeScript job scraper for LinkedIn, Indeed, Glassdoor and more",
+        href: "https://github.com/alpharomercoma/ts-jobspy",
+      },
+      {
         name: "chorus-searxng",
         detail: "self-hosted private search with AI answer synthesis",
         href: "https://github.com/alpharomercoma/chorus-searxng",
@@ -93,6 +108,11 @@ export const pillars: {
 
 export const work = [
   {
+    name: "qwen3.8-27b-mi300x",
+    desc: "Qwen3.8-27B served from a single AMD MI300X with vLLM: reproducible scripts and an authenticated HTTPS endpoint.",
+    href: "https://github.com/alpharomercoma/qwen3.8-27b-mi300x",
+  },
+  {
     name: "MI300X-vs-H200",
     desc: "One AMD MI300X against one NVIDIA H200: inference and training, every result anchored to a roofline.",
     href: "https://github.com/alpharomercoma/MI300X-vs-H200",
@@ -101,6 +121,16 @@ export const work = [
     name: "neuron-pipelines",
     desc: "Llama 3.1 8B LoRA fine-tuned on Trainium1, served by vLLM on Inferentia2, measured end to end.",
     href: "https://github.com/alpharomercoma/torchneuronx",
+  },
+  {
+    name: "openweights",
+    desc: "Open-weight models from Hugging Face running on an Android phone. Native Kotlin, llama.cpp, no cloud.",
+    href: "https://github.com/alpharomercoma/openweights",
+  },
+  {
+    name: "compute-visualizer",
+    desc: "Why is this LLM workload slow? Roofline and five-way bottleneck analysis for H100 training and inference.",
+    href: "https://github.com/alpharomercoma/compute-visualizer",
   },
   {
     name: "serverless-inference",
@@ -113,13 +143,8 @@ export const work = [
     href: "https://github.com/alpharomercoma/philippine-mall-explorer",
   },
   {
-    name: "vqwen-qformer",
-    desc: "Vision-language model: CLIP + Q-Former + Qwen3 4B, trained on an H200.",
-    href: "https://github.com/alpharomercoma/vqwen-qformer",
-  },
-  {
     name: "snapdragon-vs-m5",
-    desc: "Reproducible head-to-head: Apple M5 against Snapdragon X2 Elite.",
+    desc: "Reproducible head-to-head: Apple M5 against Snapdragon X2 Elite, CPU, GPU and NPU.",
     href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
   },
 ];
