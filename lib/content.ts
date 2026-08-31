@@ -171,8 +171,8 @@ export const people = [
     href: "https://www.linkedin.com/in/alpharomercoma/",
   },
   {
-    name: "Marc Olata",
+    name: "Arjhine Ty",
     role: "Founding Member",
-    href: "https://www.linkedin.com/in/marc-olata",
+    href: "https://www.linkedin.com/in/arrochi/",
   },
 ];
