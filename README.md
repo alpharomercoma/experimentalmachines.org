@@ -1,6 +1,6 @@
 # experimentalmachines.org
 
-Site for Experimental Machines. Independent research across intelligence, compute, and data.
+Site for Experimental Machines: GPU, NPU and ASIC benchmarks across server, laptop and mobile. Sibling site: experimentalintelligence.org.
 
 Next.js (App Router, TypeScript) + Tailwind CSS v4. Static content, no API routes.
 
@@ -12,7 +12,7 @@ npm run dev
 
 ## Edit content
 
-All copy, stats, and project links live in `lib/content.ts`. Benchmark chart data lives in `lib/benchmarks.ts`; each value traces to a published benchmark repo.
+Copy and the per-class result tables live in `lib/content.ts`. The hero figure reads `lib/measurements.ts`, every value copied from a published benchmark report.
 
 ## Deploy
 

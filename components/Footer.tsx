@@ -1,13 +1,26 @@
-import { site } from "@/lib/content";
+import { sibling, site } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-6 text-sm text-ink-soft">
-        <span>
-          {site.fullName} &copy; {new Date().getFullYear()}
-        </span>
-        <div className="flex gap-5">
+    <footer className="border-t border-rule">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-6 px-6 py-10">
+        <div>
+          <p className="text-sm text-ink-soft">
+            Two research efforts, one small team.
+          </p>
+          <p className="mt-2 text-lg tracking-tight">
+            <span className="font-light">{site.wordmark[0]} </span>
+            <span className="wide font-bold">{site.wordmark[1]}</span>
+            <span className="mx-3 text-rule">/</span>
+            <a
+              href={sibling.url}
+              className="text-ink-soft underline decoration-rule underline-offset-4 hover:text-ink hover:decoration-blue"
+            >
+              {sibling.name}
+            </a>
+          </p>
+        </div>
+        <div className="flex gap-5 text-sm text-ink-soft">
           <a
             href={site.github}
             target="_blank"
@@ -19,6 +32,7 @@ export default function Footer() {
           <a href={`mailto:${site.email}`} className="hover:text-ink">
             {site.email}
           </a>
+          <span>&copy; {new Date().getFullYear()}</span>
         </div>
       </div>
     </footer>

@@ -1,13 +1,9 @@
-import BenchmarkFigure from "@/components/BenchmarkFigure";
-import Contact from "@/components/Contact";
+import ClassSection from "@/components/ClassSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import People from "@/components/People";
-import Principles from "@/components/Principles";
-import Research from "@/components/Research";
-import Stats from "@/components/Stats";
-import Work from "@/components/Work";
+import { classes } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -15,13 +11,10 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Stats />
-        <BenchmarkFigure />
-        <Research />
-        <Work />
-        <Principles />
+        {classes.map((c, i) => (
+          <ClassSection key={c.id} cls={c} plate={i % 2 === 0} />
+        ))}
         <People />
-        <Contact />
       </main>
       <Footer />
     </>

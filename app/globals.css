@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #fafaf7;
-  --color-ink: #141414;
-  --color-ink-soft: #55554f;
-  --color-line: #e4e4dc;
-  --color-accent: #2255ff;
-  --color-accent-deep: #1b44d8;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Helvetica, Arial, sans-serif;
+  --color-bench: #f5f6f4;
+  --color-plate: #ffffff;
+  --color-ink: #121614;
+  --color-ink-soft: #4a524c;
+  --color-rule: #d6dad4;
+  --color-blue: #1e4fd8;
+  --color-blue-deep: #163fae;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, Helvetica, Arial,
+    sans-serif;
 }
 
 html {
@@ -22,17 +23,22 @@ html {
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-bench);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-feature-settings: "tnum";
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-blue);
   color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent-deep);
+  outline: 2px solid var(--color-blue-deep);
   outline-offset: 2px;
+}
+
+.wide {
+  font-stretch: 115%;
 }

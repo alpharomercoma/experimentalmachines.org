@@ -1,31 +1,41 @@
-import { people } from "@/lib/content";
+import { people, site } from "@/lib/content";
 
 export default function People() {
   return (
-    <section id="people" className="scroll-mt-14 border-b border-line">
-      <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
-        <h2 className="text-sm font-semibold uppercase tracking-widest text-accent-deep">
-          People
-        </h2>
-        <div className="mt-8 flex flex-wrap gap-4">
+    <section id="contact" className="scroll-mt-14 border-t border-rule bg-plate">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:py-20 md:grid-cols-2">
+        <div>
+          <h2 className="wide text-4xl font-bold tracking-tight sm:text-5xl">
+            Have a claim worth testing?
+          </h2>
+          <a
+            href={`mailto:${site.email}`}
+            className="mt-5 inline-block text-lg text-blue underline underline-offset-4 hover:text-blue-deep"
+          >
+            {site.email}
+          </a>
+        </div>
+        <ul className="self-end text-sm">
           {people.map((p) => (
-            <div
+            <li
               key={p.name}
-              className="w-full max-w-xs border border-line p-5 sm:w-60"
+              className="flex justify-between gap-6 border-b border-rule py-3"
             >
-              <div className="font-medium">{p.name}</div>
-              <div className="mt-0.5 text-sm text-ink-soft">{p.role}</div>
+              <span>
+                <span className="font-medium">{p.name}</span>
+                <span className="text-ink-soft"> {p.role}</span>
+              </span>
               <a
                 href={p.href}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 inline-block text-sm font-medium text-accent-deep hover:underline"
+                className="text-blue hover:text-blue-deep"
               >
-                LinkedIn &#8599;
+                LinkedIn
               </a>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

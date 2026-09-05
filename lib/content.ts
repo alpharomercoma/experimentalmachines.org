@@ -1,166 +1,137 @@
 export const site = {
   name: "Experimental Machines",
-  fullName: "Experimental Machines",
+  wordmark: ["Experimental", "Machines"] as const,
   url: "https://experimentalmachines.org",
-  tagline: "Test what others assume.",
-  description: "Independent research across intelligence, compute, and data.",
-  edge: "We run the tests ourselves and publish the code, methods, and raw numbers.",
+  description:
+    "Spec sheets are claims. Experimental Machines buys or rents the accelerators, runs the same workloads at datacenter, laptop and phone scale, and publishes every log so the numbers can be checked.",
   email: "alpha@experimentalmachines.org",
   github: "https://github.com/alpharomercoma",
 };
 
-export const stats = [
-  { value: "$376K", label: "Google TPU Research Cloud compute grant" },
-  { value: "11", label: "accelerator platforms benchmarked" },
-  { value: "2,000+", label: "labeled video clips published" },
-  { value: "78", label: "public repositories" },
-];
-
-export type Project = {
-  name: string;
-  detail: string;
-  href: string | null;
+export const sibling = {
+  name: "Experimental Intelligence",
+  url: "https://experimentalintelligence.org",
 };
 
-export const pillars: {
-  index: string;
+export type Row = {
+  repo: string;
+  href: string;
+  measured: string;
+  result: string;
+};
+
+export type HardwareClass = {
+  id: "server" | "laptop" | "phone";
   title: string;
-  claim: string;
-  projects: Project[];
-}[] = [
+  lede: string;
+  rows: Row[];
+};
+
+export const classes: HardwareClass[] = [
   {
-    index: "01",
-    title: "Multimodality",
-    claim: "Vision-language systems that judge content, not just caption it.",
-    projects: [
+    id: "server",
+    title: "Server",
+    lede: "AMD MI300X against NVIDIA H200 in inference and training, plus Trainium, Inferentia and TPUs.",
+    rows: [
       {
-        name: "Visual-Qwen",
-        detail: "CLIP + Q-Former + Qwen3 4B, 92% eval accuracy, trained on an H200",
-        href: "https://github.com/alpharomercoma/vqwen-qformer",
-      },
-      {
-        name: "MicroMARC",
-        detail: "vision-language model that flags cognitively degrading short-form video",
-        href: null,
-      },
-    ],
-  },
-  {
-    index: "02",
-    title: "Accelerated computing",
-    claim: "One PyTorch workload, profiled across GPUs, TPUs, NPUs, and phones.",
-    projects: [
-      {
-        name: "De-mystifying PyTorch for ASICs",
-        detail: "accepted talk, PyTorch Conference Europe 2026",
-        href: null,
-      },
-      {
-        name: "MI300X vs H200",
-        detail: "single-GPU datacenter benchmark; a 1.36x memory edge becomes a 1.84x KV cache advantage",
+        repo: "MI300X-vs-H200",
         href: "https://github.com/alpharomercoma/MI300X-vs-H200",
+        measured: "One GPU each, serving and training, three shapes, eight concurrency points",
+        result: "MI300X 1.14x on 70B FP8; H200 1.40x on 8B serving and 1.32 to 1.40x on training",
       },
       {
-        name: "Edge silicon benchmarks",
-        detail: "Apple M5, Snapdragon X2 Elite, Dimensity 9500s, head to head",
-        href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
+        repo: "qwen3.8-27b-mi300x",
+        href: "https://github.com/alpharomercoma/qwen3.8-27b-mi300x",
+        measured: "Qwen3.8-27B served from one MI300X with vLLM behind an authenticated endpoint",
+        result: "OpenAI-compatible endpoint",
       },
       {
-        name: "compute-visualizer",
-        detail: "roofline and five-way bottleneck analysis for H100 training and inference",
+        repo: "torchneuronx",
+        href: "https://github.com/alpharomercoma/torchneuronx",
+        measured: "Llama 3.1 8B LoRA on Trainium1, served by vLLM on Inferentia2",
+        result: "trn1 to inf2",
+      },
+      {
+        repo: "serverless-inference",
+        href: "https://github.com/alpharomercoma/serverless-inference",
+        measured: "Scale-to-zero inference on RunPod; model and GPU chosen by shootout",
+        result: "RunPod, scale to zero",
+      },
+      {
+        repo: "compute-visualizer",
         href: "https://github.com/alpharomercoma/compute-visualizer",
+        measured: "Roofline and five-way bottleneck analysis for H100 training and inference",
+        result: "H100 roofline, five bottlenecks",
       },
       {
-        name: "openweights",
-        detail: "open-weight models running locally on an Android phone, Kotlin and llama.cpp",
+        repo: "will-it-asic",
+        href: "https://github.com/alpharomercoma/will-it-asic",
+        measured: "Will this model fit a TPU, Trainium, Inferentia, Gaudi or GPU?",
+        result: "five accelerator families",
+      },
+      {
+        repo: "pytorch-for-asics",
+        href: "https://github.com/alpharomercoma/pytorch-for-asics",
+        measured: "De-mystifying PyTorch for ASICs, PyTorch Conference Europe 2026",
+        result: "conference talk",
+      },
+      {
+        repo: "xla-agentic-development",
+        href: "https://github.com/alpharomercoma/xla-agentic-development",
+        measured: "Skills for coding agents on TPUs: Pallas, XProf, XLA lowering",
+        result: "Claude Code and Codex plugin",
+      },
+    ],
+  },
+  {
+    id: "laptop",
+    title: "Laptop",
+    lede: "Apple M5 against Snapdragon X2 Elite: same llama.cpp release, byte-identical weights, each chip's own GPU backend.",
+    rows: [
+      {
+        repo: "snapdragon-vs-m5",
+        href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
+        measured: "37 tests each: CPU, GPU and NPU inference, training, a 10-minute sustained loop, perplexity",
+        result: "M5 1.93x on GPU decode; X2 1.10x on CPU",
+      },
+      {
+        repo: "mlx-models",
+        href: "https://github.com/alpharomercoma/mlx-models",
+        measured: "MLP, CNN and ViT trained from scratch on an M5 Air, then Whisper, CLIP, SigLIP",
+        result: "MLX 0.32 on 24 GB unified memory",
+      },
+      {
+        repo: "mlx-agentic-development",
+        href: "https://github.com/alpharomercoma/mlx-agentic-development",
+        measured: "Does an MLX skills kit help a coding agent? Pre-registered, placebo arm, 250 runs",
+        result: "null result, p = 0.69",
+      },
+    ],
+  },
+  {
+    id: "phone",
+    title: "Phone",
+    lede: "Snapdragon 8 Elite against Dimensity 9500s, measured on the phones themselves, no root.",
+    rows: [
+      {
+        repo: "snapdragon-vs-mediatek",
+        href: "https://github.com/alpharomercoma/snapdragon-vs-mediatek",
+        measured: "NPU, GPU and CPU inference and training, int8 and fp16, on device",
+        result: "4,307 vs 1,100 to 1,470 GOPS int8 on the NPU",
+      },
+      {
+        repo: "poco-phone-ai-training",
+        href: "https://github.com/alpharomercoma/poco-phone-ai-training",
+        measured: "Is the Dimensity 9500s NPU reachable without root? Through NeuroPilot, yes",
+        result: "1.1 to 1.5 TOPS int8",
+      },
+      {
+        repo: "openweights",
         href: "https://github.com/alpharomercoma/openweights",
+        measured: "Hugging Face open weights on Android, native Kotlin and llama.cpp, no account",
+        result: "on the Play Store",
       },
     ],
-  },
-  {
-    index: "03",
-    title: "Data engineering",
-    claim: "Datasets and pipelines built to be rerun, not just cited.",
-    projects: [
-      {
-        name: "Multimodal Sludge Dataset",
-        detail: "2,000+ labeled video clips, published on Kaggle",
-        href: null,
-      },
-      {
-        name: "Philippine Mall Explorer",
-        detail: "40,462 store listings from 303 malls, scraped into a reproducible dataset on a map",
-        href: "https://github.com/alpharomercoma/philippine-mall-explorer",
-      },
-      {
-        name: "ts-jobspy",
-        detail: "TypeScript job scraper for LinkedIn, Indeed, Glassdoor and more",
-        href: "https://github.com/alpharomercoma/ts-jobspy",
-      },
-      {
-        name: "chorus-searxng",
-        detail: "self-hosted private search with AI answer synthesis",
-        href: "https://github.com/alpharomercoma/chorus-searxng",
-      },
-    ],
-  },
-];
-
-export const work = [
-  {
-    name: "qwen3.8-27b-mi300x",
-    desc: "Qwen3.8-27B served from a single AMD MI300X with vLLM: reproducible scripts and an authenticated HTTPS endpoint.",
-    href: "https://github.com/alpharomercoma/qwen3.8-27b-mi300x",
-  },
-  {
-    name: "MI300X-vs-H200",
-    desc: "One AMD MI300X against one NVIDIA H200: inference and training, every result anchored to a roofline.",
-    href: "https://github.com/alpharomercoma/MI300X-vs-H200",
-  },
-  {
-    name: "neuron-pipelines",
-    desc: "Llama 3.1 8B LoRA fine-tuned on Trainium1, served by vLLM on Inferentia2, measured end to end.",
-    href: "https://github.com/alpharomercoma/torchneuronx",
-  },
-  {
-    name: "openweights",
-    desc: "Open-weight models from Hugging Face running on an Android phone. Native Kotlin, llama.cpp, no cloud.",
-    href: "https://github.com/alpharomercoma/openweights",
-  },
-  {
-    name: "compute-visualizer",
-    desc: "Why is this LLM workload slow? Roofline and five-way bottleneck analysis for H100 training and inference.",
-    href: "https://github.com/alpharomercoma/compute-visualizer",
-  },
-  {
-    name: "serverless-inference",
-    desc: "Scale-to-zero LLM inference on RunPod; model and GPU picked from a measured shootout.",
-    href: "https://github.com/alpharomercoma/serverless-inference",
-  },
-  {
-    name: "philippine-mall-explorer",
-    desc: "40,462 store listings from 303 Philippine malls, cleaned into a reproducible dataset.",
-    href: "https://github.com/alpharomercoma/philippine-mall-explorer",
-  },
-  {
-    name: "snapdragon-vs-m5",
-    desc: "Reproducible head-to-head: Apple M5 against Snapdragon X2 Elite, CPU, GPU and NPU.",
-    href: "https://github.com/alpharomercoma/snapdragon-vs-m5",
-  },
-];
-
-export const principles = [
-  {
-    title: "Independent",
-    body: "No vendor allegiance. We buy or rent the hardware we test.",
-  },
-  {
-    title: "Open",
-    body: "Methods, code, and raw logs ship with every result.",
-  },
-  {
-    title: "Measured",
-    body: "Claims come from benchmarks we ran, not spec sheets.",
   },
 ];
 

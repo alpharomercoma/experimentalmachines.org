@@ -1,27 +1,24 @@
 import { site } from "@/lib/content";
 
 const links = [
-  { href: "#research", label: "Research" },
-  { href: "#work", label: "Work" },
-  { href: "#people", label: "People" },
+  { href: "#server", label: "Server" },
+  { href: "#laptop", label: "Laptop" },
+  { href: "#phone", label: "Phone" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper">
+    <header className="sticky top-0 z-50 border-b border-rule bg-bench/95 backdrop-blur">
       <nav
         aria-label="Main"
-        className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6"
+        className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6"
       >
-        <a
-          href="#top"
-          className="flex items-center gap-2.5 text-sm font-semibold tracking-tight sm:text-base"
-        >
-          <span aria-hidden className="block h-3 w-3 bg-accent" />
-          {site.name}
+        <a href="#top" className="text-base tracking-tight">
+          <span className="font-light">{site.wordmark[0]} </span>
+          <span className="wide font-bold">{site.wordmark[1]}</span>
         </a>
-        <div className="flex items-center gap-5 text-sm sm:gap-7">
+        <div className="flex items-center gap-6 text-sm">
           {links.map((l) => (
             <a
               key={l.href}
@@ -32,16 +29,10 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
-            className="text-ink-soft hover:text-ink sm:hidden"
-          >
-            Contact
-          </a>
-          <a
             href={site.github}
             target="_blank"
             rel="noreferrer"
-            className="font-medium text-accent-deep hover:text-ink"
+            className="text-blue hover:text-blue-deep"
           >
             GitHub
           </a>
