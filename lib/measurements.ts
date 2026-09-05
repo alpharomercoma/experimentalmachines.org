@@ -5,14 +5,12 @@
 // Phone: snapdragon-vs-mediatek README (llama.cpp, Gemma 3 1B Q4, on device).
 
 export const serverSweep = {
-  workload: "Aggregate output tok/s over all concurrent streams. Llama 3.1 8B BF16, vLLM, 1k in / 1k out",
   concurrency: [1, 4, 8, 16, 32, 64, 128, 256],
   h200: [199, 761, 1445, 2674, 4486, 6806, 9937, 11337],
   mi300x: [195, 603, 1137, 2066, 3443, 4956, 7022, 8085],
 };
 
 export const laptopDecode = {
-  workload: "Token generation on the GPU, llama.cpp, tok/s",
   groups: [
     { label: "Gemma 3 1B Q4", m5: 143.8, x2: 74.5 },
     { label: "Qwen3 8B Q4", m5: 25.6, x2: 18.2 },
@@ -22,7 +20,6 @@ export const laptopDecode = {
 // The README reports ranges across runs; bars sit at the midpoint and the
 // labels show the range.
 export const phoneDecode = {
-  workload: "Gemma 3 1B Q4 token generation, llama.cpp, tok/s, range across runs",
   groups: [
     { label: "CPU", elite: 63, eliteLabel: "62 to 64", dimensity: 26.5, dimensityLabel: "22 to 31" },
     { label: "GPU", elite: 42, eliteLabel: "41.5 to 42.5", dimensity: 27, dimensityLabel: "~27" },
@@ -32,7 +29,7 @@ export const phoneDecode = {
 // Second figure: who wins each lane, and by how much. Ratios are winner over
 // loser, copied or computed from the same three reports. "a" is the ink chip,
 // "b" the blue chip, matching the first figure.
-export type RatioRow = {
+type RatioRow = {
   label: string;
   winner: "a" | "b";
   ratio: number;

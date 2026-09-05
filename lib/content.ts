@@ -13,7 +13,7 @@ export const sibling = {
   url: "https://experimentalintelligence.org",
 };
 
-export type Row = {
+type Row = {
   repo: string;
   href: string;
   measured: string;
@@ -67,7 +67,7 @@ export const classes: HardwareClass[] = [
         repo: "will-it-asic",
         href: "https://github.com/alpharomercoma/will-it-asic",
         measured: "Will this model fit a TPU, Trainium, Inferentia, Gaudi or GPU?",
-        result: "five accelerator families",
+        result: "TPU, Trainium, Inferentia, Gaudi, GPU",
       },
       {
         repo: "pytorch-for-asics",
