@@ -3,7 +3,7 @@ export const site = {
   wordmark: ["Experimental", "Machines"] as const,
   url: "https://experimentalmachines.org",
   description:
-    "Spec sheets are claims. Experimental Machines buys or rents the accelerators, runs the same workloads at datacenter, laptop and phone scale, and publishes every log so the numbers can be checked.",
+    "Benchmarks of AI accelerators at datacenter, laptop and phone scale, with published logs.",
   email: "alpha@experimentalmachines.org",
   github: "https://github.com/alpharomercoma",
 };

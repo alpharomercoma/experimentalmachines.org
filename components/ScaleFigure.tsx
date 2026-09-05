@@ -165,8 +165,8 @@ export default function ScaleFigure() {
         </svg>
       </div>
       <figcaption className="mt-3 text-sm text-ink-soft">
-        Copied from the published reports. Server throughput is the sum over
-        all concurrent streams; laptop and phone are one stream each.
+        Server throughput is the sum over all concurrent streams; laptop and
+        phone are one stream each. Every value is from the linked repository.
       </figcaption>
     </figure>
   );

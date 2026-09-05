@@ -1,37 +1,23 @@
 import RatioFigure from "@/components/RatioFigure";
 import ScaleFigure from "@/components/ScaleFigure";
-import { site } from "@/lib/content";
 
 export default function Hero() {
   return (
     <section id="top" className="scroll-mt-14">
-      <div className="mx-auto max-w-6xl px-6 pt-16 sm:pt-24">
-        <h1 className="wide max-w-4xl text-[2.6rem] font-bold leading-[0.95] tracking-tight sm:text-7xl md:text-8xl">
-          Independent benchmarks for AI hardware.
+      <div className="mx-auto max-w-6xl px-6 pb-16 pt-14 sm:pt-20">
+        <h1 className="wide max-w-4xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+          LLM inference on datacenter, laptop and phone silicon.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
-          {site.description}
-        </p>
-      </div>
-      <div className="mx-auto max-w-6xl px-6 pb-16 pt-14">
-        <h2 className="wide text-3xl font-bold tracking-tight sm:text-4xl">
-          Six chips. Three scales. Measured, not quoted.
-        </h2>
-        <p className="mt-3 max-w-2xl text-lg leading-7 text-ink-soft">
-          AMD against NVIDIA in a datacenter, Apple against Qualcomm on a
-          laptop, Qualcomm against MediaTek in a phone.
-        </p>
-        <div className="mt-8">
+        <div className="mt-10">
           <ScaleFigure />
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-6 pb-16">
         <h2 className="wide text-3xl font-bold tracking-tight sm:text-4xl">
-          Every lane, same pairs.
+          Winner and margin, every lane
         </h2>
         <p className="mt-3 max-w-2xl text-lg leading-7 text-ink-soft">
-          The headline number hides the interesting part. Bars grow toward the
-          chip that wins, on a log scale.
+          Bars grow toward the chip that wins, on a log scale.
         </p>
         <div className="mt-8">
           <RatioFigure />
