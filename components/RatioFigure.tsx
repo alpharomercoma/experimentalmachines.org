@@ -3,7 +3,8 @@ import { ratioPanels, type RatioPanel } from "@/lib/measurements";
 // Three bands, one per scale: diverging bars on a log axis. Bars grow left
 // for the ink chip and right for the blue chip; length is log10 of the
 // winner's margin, with 100x reaching HALF percent of the track. Plain HTML
-// so it reflows on a phone instead of scrolling.
+// so it reflows on a phone instead of scrolling. Hovering a track names both
+// chips and the margin.
 const HALF = 40;
 const MAX = 100;
 const len = (r: number) => (Math.log10(Math.max(r, 1)) / Math.log10(MAX)) * HALF;
@@ -34,7 +35,7 @@ function Band({ panel }: { panel: RatioPanel }) {
           return (
             <div key={r.label} className="contents">
               <div className="pt-2 leading-tight text-ink sm:py-1.5 sm:text-right">{r.label}</div>
-              <div className="relative h-7 bg-plate sm:h-auto">
+              <div className="group relative h-7 bg-plate sm:h-auto">
                 {ticks.map((t) => (
                   <span key={t}>
                     <span aria-hidden className="absolute bottom-0 top-0 border-l border-dashed border-rule" style={{ left: `${50 - len(t)}%` }} />
@@ -53,6 +54,12 @@ function Band({ panel }: { panel: RatioPanel }) {
                   style={left ? { right: `${50 + l}%` } : { left: `${50 + l}%` }}
                 >
                   {label}
+                </span>
+                <span
+                  className={`pointer-events-none absolute top-1/2 z-10 -translate-y-1/2 whitespace-nowrap border border-rule bg-plate px-2 py-1 text-xs text-ink opacity-0 transition-opacity group-hover:opacity-100 ${left ? "left-[52%]" : "right-[52%]"}`}
+                >
+                  <span className={`font-semibold tabular-nums ${left ? "text-ink" : "text-blue"}`}>{left ? panel.a : panel.b}</span>
+                  {" "}{label} over {left ? panel.b : panel.a}
                 </span>
               </div>
             </div>
