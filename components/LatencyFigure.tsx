@@ -14,8 +14,8 @@ type Scale = typeof TTFT;
 
 const pct = (v: number, s: Scale) =>
   ((Math.log10(v) - Math.log10(s.min)) / (Math.log10(s.max) - Math.log10(s.min))) * 100;
-const fmtT = (v: number) => `${v.toFixed(2)} s`;
-const fmtP = (v: number) => `${v} ms, ${(1000 / v).toFixed(1)} tok/s`;
+const fmtT = (v: number, prefill: number) => `${v.toFixed(2)} s (${prefill} tok/s)`;
+const fmtP = (v: number) => `${v} ms (${(1000 / v).toFixed(1)} tok/s)`;
 
 type Active = string | null;
 
@@ -98,7 +98,7 @@ function Track({
   scale: Scale;
   a: number;
   b: number;
-  fmt: (v: number) => string;
+  fmt: (v: number, runtime: "llama" | "et") => string;
   chip: string;
   id: string;
   active: Active;
@@ -117,8 +117,8 @@ function Track({
         className="absolute top-1/2 h-px bg-ink-soft"
         style={{ left: `${Math.min(xa, xb)}%`, width: `${Math.abs(xa - xb)}%` }}
       />
-      <Mark id={`${id}|et`} x={xb} runtime="ExecuTorch" chip={chip} value={fmt(b)} active={active} setActive={setActive} pointerRef={pointerRef} />
-      <Mark id={`${id}|llama`} x={xa} runtime="llama.cpp" chip={chip} value={fmt(a)} active={active} setActive={setActive} pointerRef={pointerRef} />
+      <Mark id={`${id}|et`} x={xb} runtime="ExecuTorch" chip={chip} value={fmt(b, "et")} active={active} setActive={setActive} pointerRef={pointerRef} />
+      <Mark id={`${id}|llama`} x={xa} runtime="llama.cpp" chip={chip} value={fmt(a, "llama")} active={active} setActive={setActive} pointerRef={pointerRef} />
     </div>
   );
 }
@@ -180,7 +180,7 @@ export default function LatencyFigure() {
               return (
                 <div key={c.short} className="contents">
                   <div className="flex h-7 items-center text-ink-soft">{c.short}</div>
-                  <Track scale={TTFT} a={l[0]} b={e[0]} fmt={fmtT} chip={c.name} id={`${id}|t`} active={active} setActive={setActive} pointerRef={pointerRef} />
+                  <Track scale={TTFT} a={l[0]} b={e[0]} fmt={(v, r) => fmtT(v, m.prefill[r][i])} chip={c.name} id={`${id}|t`} active={active} setActive={setActive} pointerRef={pointerRef} />
                   <Track scale={TPOT} a={l[1]} b={e[1]} fmt={fmtP} chip={c.name} id={`${id}|p`} active={active} setActive={setActive} pointerRef={pointerRef} />
                 </div>
               );
@@ -201,7 +201,8 @@ export default function LatencyFigure() {
         </ul>
         <p className="mt-4">
           Both axes are log scales, shared across the five panels. Hover or
-          tap a mark for its number.
+          tap a mark for its number; the rate in parentheses is the median
+          prefill or decode tokens per second.
         </p>
         <p className="mt-3">
           Conditions are not matched. The Dimensity 9400 ran in hand under a
