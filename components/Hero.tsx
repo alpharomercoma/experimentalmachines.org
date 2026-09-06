@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LatencyFigure from "@/components/LatencyFigure";
 import RatioFigure from "@/components/RatioFigure";
 import ScaleFigure from "@/components/ScaleFigure";
@@ -42,6 +43,18 @@ export default function Hero() {
         </p>
         <div className="mt-8">
           <LatencyFigure />
+        </div>
+      </div>
+      <div className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="border-t border-rule pt-8">
+          <h2 className="wide text-2xl font-bold tracking-tight sm:text-3xl">GPU against ASIC</h2>
+          <p className="mt-3 max-w-2xl text-lg leading-7 text-ink-soft">
+            At 32 concurrent streams, one Inferentia2 cost 2.4x as much per output token as one MI300X. Trainium1 fine-tuned the same 8B model at 68.3% MFU.{" "}
+            <Link href="/asic" className="text-blue hover:text-blue-deep">
+              The comparison, with the training, serving and speculative decoding figures
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </section>

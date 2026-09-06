@@ -1,10 +1,12 @@
+import Link from "next/link";
 import { site } from "@/lib/content";
 
 const links = [
-  { href: "#server", label: "Server" },
-  { href: "#laptop", label: "Laptop" },
-  { href: "#phone", label: "Phone" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#server", label: "Server" },
+  { href: "/#laptop", label: "Laptop" },
+  { href: "/#phone", label: "Phone" },
+  { href: "/asic", label: "ASIC" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -14,19 +16,19 @@ export default function Nav() {
         aria-label="Main"
         className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6"
       >
-        <a href="#top" className="text-base tracking-tight">
+        <Link href="/" className="text-base tracking-tight">
           <span className="font-light">{site.wordmark[0]} </span>
           <span className="wide font-bold">{site.wordmark[1]}</span>
-        </a>
+        </Link>
         <div className="flex items-center gap-6 text-sm">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="hidden text-ink-soft hover:text-ink sm:inline"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href={site.github}
