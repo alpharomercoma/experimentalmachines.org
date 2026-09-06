@@ -12,7 +12,7 @@ npm run dev
 
 ## Edit content
 
-Copy and the per-class result tables live in `lib/content.ts`. The hero figure reads `lib/measurements.ts`, every value copied from a published benchmark report.
+Copy and the per-class result tables live in `lib/content.ts`. The hero figures read `lib/measurements.ts` and `lib/latency.ts`, every value copied from a published benchmark report.
 
 ## Deploy
 

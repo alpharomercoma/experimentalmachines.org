@@ -1,5 +1,7 @@
+import LatencyFigure from "@/components/LatencyFigure";
 import RatioFigure from "@/components/RatioFigure";
 import ScaleFigure from "@/components/ScaleFigure";
+import { latencyLinks } from "@/lib/latency";
 
 export default function Hero() {
   return (
@@ -21,6 +23,25 @@ export default function Hero() {
         </p>
         <div className="mt-8">
           <RatioFigure />
+        </div>
+      </div>
+      <div className="mx-auto max-w-6xl px-6 pb-16">
+        <h2 className="wide text-3xl font-bold tracking-tight sm:text-4xl">
+          First token and per token on five phone chips
+        </h2>
+        <p className="mt-3 max-w-2xl text-lg leading-7 text-ink-soft">
+          Five small models on llama.cpp and ExecuTorch, measured inside the{" "}
+          <a href={latencyLinks.repo} target="_blank" rel="noreferrer" className="text-blue hover:text-blue-deep">
+            OpenWeights
+          </a>{" "}
+          app. Medians over 60 to 90 prompts per cell.{" "}
+          <a href={latencyLinks.page} target="_blank" rel="noreferrer" className="text-blue hover:text-blue-deep">
+            Interactive version
+          </a>
+          .
+        </p>
+        <div className="mt-8">
+          <LatencyFigure />
         </div>
       </div>
     </section>
