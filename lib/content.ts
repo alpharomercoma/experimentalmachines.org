@@ -5,7 +5,7 @@ export const site = {
   description:
     "Benchmarks of AI accelerators at datacenter, laptop and phone scale, with published logs.",
   email: "alpha@experimentalmachines.org",
-  github: "https://github.com/alpharomercoma",
+  github: "https://github.com/ExperimentalMachines",
 };
 
 export const sibling = {
@@ -127,7 +127,7 @@ export const classes: HardwareClass[] = [
       },
       {
         repo: "openweights",
-        href: "https://github.com/alpharomercoma/openweights",
+        href: "https://github.com/ExperimentalMachines/openweights",
         measured: "Hugging Face open weights on Android, native Kotlin and llama.cpp, no account",
         result: "on the Play Store",
       },

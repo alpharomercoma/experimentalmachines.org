@@ -61,6 +61,6 @@ export const latency: LatencyModel[] = [
 ];
 
 export const latencyLinks = {
-  page: "https://alpharomercoma.github.io/openweights/latency.html",
-  repo: "https://github.com/alpharomercoma/openweights",
+  page: "https://experimentalmachines.github.io/openweights/latency.html",
+  repo: "https://github.com/ExperimentalMachines/openweights",
 };
